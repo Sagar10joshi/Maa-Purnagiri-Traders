@@ -2,7 +2,8 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Wrench, Hammer, Zap } from "lucide-react"
 import { Button } from "../components/ui/button"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
+import Link from 'next/link'
 
 export default function Home() {
   const containerVariants = {
@@ -25,9 +26,9 @@ export default function Home() {
   }
 
   const floatingIcons = [
-    { Icon: Wrench, delay: 0, x: 100, y: 50 },
-    { Icon: Hammer, delay: 0.5, x: -80, y: 80 },
-    { Icon: Zap, delay: 1, x: 120, y: -60 },
+    { Icon: Wrench  },
+    { Icon: Hammer },
+    { Icon: Zap },
   ]
 
   return (
@@ -91,9 +92,9 @@ export default function Home() {
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" variants={itemVariants}>
-            <Link to="/products">
+            <Link href="/contact" passHref>
               <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg group">
-                Shop Now
+                Contact Us
                 <motion.div
                   className="ml-2"
                   animate={{ x: [0, 5, 0] }}
@@ -104,7 +105,7 @@ export default function Home() {
               </Button>
             </Link>
 
-            <Link to="/about">
+            <Link href="/about" passHref>
               <Button
                 variant="outline"
                 size="lg"
@@ -303,8 +304,8 @@ export default function Home() {
                   >
                     <div className="bg-orange-600 rounded-full p-2 mt-1">
                       <motion.div
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.3 }}
+                        // animate={{ scale: [1, 1.2, 1] }}
+                        // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.3 }}
                       >
                         ✓
                       </motion.div>
@@ -343,71 +344,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Customer Testimonials */}
-        {/* {/* <motion.section className="mt-32">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.0 }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">What Our Customers Say</h2>
-            <p className="text-slate-300 text-lg">Real feedback from real customers</p>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {[
-              {
-                name: "Sarah Johnson",
-                role: "Contractor",
-                text: "Hardware Haven has been my go-to supplier for 10 years. Quality products and unbeatable service!",
-                rating: 5,
-              },
-              {
-                name: "Mike Chen",
-                role: "DIY Enthusiast",
-                text: "The staff here really knows their stuff. They helped me complete my deck project perfectly.",
-                rating: 5,
-              },
-              {
-                name: "Lisa Rodriguez",
-                role: "Interior Designer",
-                text: "Great selection of tools and materials. The custom cutting service saved me so much time!",
-                rating: 5,
-              },
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02, borderColor: "#f97316" }}
-              >
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <motion.span
-                      key={i}
-                      className="text-yellow-400 text-xl"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 1, delay: i * 0.1, repeat: Number.POSITIVE_INFINITY, repeatDelay: 3 }}
-                    >
-                      ⭐
-                    </motion.span>
-                  ))}
-                </div>
-                <p className="text-slate-300 mb-4 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="text-white font-semibold">{testimonial.name}</p>
-                  <p className="text-slate-400 text-sm">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))} */}
-          {/* </motion.div> */}
-        {/* </motion.section>  */}
+        
 
         {/* Brand Partners */}
         <motion.section className="mt-32 mb-20">

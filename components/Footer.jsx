@@ -15,12 +15,12 @@ export default function Footer() {
     { name: "Contact", href: "/contact" },
   ]
 
-  const categories = [
-    { name: "Tools", href: "/products?category=tools" },
-    // { name: "H", href: "/products?category=electrical" },
-    { name: "Plumbing", href: "/products?category=plumbing" },
-    // { name: "Paints", href: "/products?category=paints" },
-  ]
+  // const categories = [
+  //   { name: "Tools", href: "/products?category=tools" },
+  //   // { name: "H", href: "/products?category=electrical" },
+  //   { name: "Plumbing", href: "/products?category=plumbing" },
+  //   // { name: "Paints", href: "/products?category=paints" },
+  // ]
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
@@ -84,7 +84,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Categories */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+          {/* <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
             <h3 className="text-lg font-semibold mb-4">Categories</h3>
             <ul className="space-y-2">
               {categories.map((category) => (
@@ -100,7 +100,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </motion.div> */}
 
           {/* Newsletter */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
@@ -114,14 +114,7 @@ export default function Footer() {
                 <span>9410333186</span>
                 <span>9897264344</span>
               </div>
-            {/* <div className="space-y-3">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-slate-800 border-slate-700 text-white placeholder-slate-400"
-              />
-              <Button className="w-full bg-orange-600 hover:bg-orange-700">Subscribe</Button>
-            </div> */}
+            
 
             {/* Social Links */}
             <div className="flex space-x-4 mt-6">

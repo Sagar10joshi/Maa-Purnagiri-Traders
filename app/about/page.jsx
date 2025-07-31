@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { Award, Users, Clock, Heart } from "lucide-react"
 import Image from "next/image"
-// import LaxmiImage from './Laxmi.png'; 
 
 
 export default function About() {

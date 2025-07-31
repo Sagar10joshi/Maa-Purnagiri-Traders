@@ -16,8 +16,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Handle form submission
-    // console.log("Form submitted:", formData)
+
     alert('Thanks for contacting us.')
 
     setFormData({
@@ -174,15 +173,7 @@ export default function Contact() {
             >
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Find Us</h3>
               <div className="bg-slate-200 rounded-lg h-48 flex items-center justify-center">
-                {/* <motion.div
-                  className="text-slate-500 text-center"
-                  animate={{ opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                >
-                  <MapPin className="w-12 h-12 mx-auto mb-2" />
-                  <p>Interactive Map</p>
-                  <p className="text-sm">123 Hardware Street</p>
-                </motion.div> */}
+                
 
                 <iframe
                   title="Map"

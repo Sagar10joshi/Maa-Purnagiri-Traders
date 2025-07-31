@@ -21,40 +21,6 @@ export default function Home() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -131,9 +97,9 @@ export default function Home() {
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" variants={itemVariants}>
-            <Link href="/products">
+            <Link href="/contact">
               <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg group">
-                Shop Now
+                Contact Us
                 <motion.div
                   className="ml-2"
                   animate={{ x: [0, 5, 0] }}
