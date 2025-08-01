@@ -48,7 +48,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["maapurnagiri1974@gmail.com"],
+      details: ["maapurnagiritraders1974@gmail.com"],
     },
     {
       icon: Clock,
@@ -155,11 +155,28 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">{info.title}</h3>
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-slate-600">
-                      {detail}
-                    </p>
-                  ))}
+                  {info.details.map((detail, idx) => {
+                    let href = null
+
+                    if (info.title.toLowerCase().includes("call")) {
+                      href = `tel:${detail}`
+                    } else if (info.title.toLowerCase().includes("email")) {
+                      href = `mailto:${detail}`
+                    }
+
+                    return (
+                      <p key={idx} className="text-slate-600">
+                        {href ? (
+                          <a href={href} className="text-orange-600 hover:underline">
+                            {detail}
+                          </a>
+                        ) : (
+                          detail
+                        )}
+                      </p>
+                    )
+                  })}
+
                 </div>
               </motion.div>
             ))}
@@ -173,7 +190,7 @@ export default function Contact() {
             >
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Find Us</h3>
               <div className="bg-slate-200 rounded-lg h-48 flex items-center justify-center">
-                
+
 
                 <iframe
                   title="Map"

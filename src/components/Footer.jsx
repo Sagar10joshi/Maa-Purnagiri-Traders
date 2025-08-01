@@ -39,7 +39,7 @@ export default function Footer() {
               >
                 <Wrench className="w-8 h-8 text-orange-500" />
               </motion.div>
-              <span className="text-xl font-bold">Hardware Haven</span>
+              <span className="text-xl font-bold">Maa Purnagiri Traders</span>
             </div>
             <p className="text-slate-400 mb-4">
               Your trusted partner for all hardware needs. Quality tools, expert advice, and exceptional service since
@@ -48,15 +48,18 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm">
                 <MapPin className="w-4 h-4 text-orange-500" />
-                <span>123 Hardware Street, BD 12345</span>
+                <span>Teenpani bypass opposite of Tata Motors near City Hospital,Haldwani</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="w-4 h-4 text-orange-500" />
-                <span>(555) 123-4567</span>
+                <a href="tel:9410333186" className="hover:text-orange-400 transition-colors">9410333186</a>
+                <a href="tel:9897264344" className="hover:text-orange-400 transition-colors">9897264344</a>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 text-orange-500" />
-                <span>info@hardwarehaven.com</span>
+                <a href="mailto:maapurnagiritraders1974@gmail.com" className="hover:text-orange-400 transition-colors">
+                  maapurnagiritraders1974@gmail.com
+                </a>
               </div>
             </div>
           </motion.div>
@@ -101,18 +104,17 @@ export default function Footer() {
 
           {/* Newsletter */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-            <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
+            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <p className="text-slate-400 mb-4 text-sm">
-              Subscribe to our newsletter for the latest deals and product updates.
+              Get in touch with us.
             </p>
-            <div className="space-y-3">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-slate-800 border-slate-700 text-white placeholder-slate-400"
-              />
-              <Button className="w-full bg-orange-600 hover:bg-orange-700">Subscribe</Button>
-            </div>
+
+            <div className="flex items-center space-x-2 text-sm">
+                <Phone className="w-4 h-4 text-orange-500" />
+                <a href="tel:9410333186" className="hover:text-orange-400 transition-colors">9410333186</a>
+                <a href="tel:9897264344" className="hover:text-orange-400 transition-colors">9897264344</a>
+              </div>
+            
 
             {/* Social Links */}
             <div className="flex space-x-4 mt-6">
@@ -139,7 +141,7 @@ export default function Footer() {
           transition={{ delay: 0.5 }}
         >
           <p className="text-slate-400 text-sm">
-            © {new Date().getFullYear()} Hardware Haven. All rights reserved. Built with ❤️ for builders and creators.
+            © {new Date().getFullYear()} Maa Purnagiri Traders . All rights reserved.
           </p>
         </motion.div>
       </div>

@@ -54,13 +54,10 @@ export default function About() {
         >
           <motion.div variants={itemVariants}>
             <motion.div className="relative" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-              <Image
-                // image :LaxmiImage,
-                src="/placeholder.svg?height=400&width=400"
+              <img
+                src="/ownerImage.jpg?height=400&width=400"
                 alt="Store Owner"
-                width={400}
-                height={400}
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg w-full h-96 object-cover"
               />
               <motion.div
                 className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"
@@ -81,7 +78,7 @@ export default function About() {
               <motion.span
                 className="text-6xl text-orange-500 absolute -top-4 -left-4"
                 animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
                 "
               </motion.span>
@@ -118,8 +115,8 @@ export default function About() {
             >
               <motion.div
                 className="flex justify-center mb-4"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
+                // whileHover={{ rotate: 360 }}
+                // transition={{ duration: 0.5 }}
               >
                 <stat.icon className="w-8 h-8 text-orange-600" />
               </motion.div>
@@ -144,8 +141,8 @@ export default function About() {
         >
           <motion.h2
             className="text-3xl md:text-4xl font-bold mb-6"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+            // animate={{ y: [0, -10, 0] }}
+            // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           >
             Our Mission
           </motion.h2>

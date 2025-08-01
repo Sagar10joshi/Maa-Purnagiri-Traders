@@ -31,17 +31,17 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Visit Our Store",
-      details: ["123 Hardware Street", "Builder's District, BD 12345"],
+      details: ["Teenpani bypass opposite of Tata Motors near City Hospital,Haldwani"],
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["(555) 123-4567", "Mon-Sat: 8AM-8PM"],
+      details: ["9410333186", "9897264344"],
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@hardwarehaven.com", "support@hardwarehaven.com"],
+      details: ["maapurnagiritraders1974@gmail.com"],
     },
     {
       icon: Clock,
@@ -147,11 +147,28 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">{info.title}</h3>
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-slate-600">
-                      {detail}
-                    </p>
-                  ))}
+                  {info.details.map((detail, idx) => {
+                    let href = null
+
+                    if (info.title.toLowerCase().includes("call")) {
+                      href = `tel:${detail}`
+                    } else if (info.title.toLowerCase().includes("email")) {
+                      href = `mailto:${detail}`
+                    }
+
+                    return (
+                      <p key={idx} className="text-slate-600">
+                        {href ? (
+                          <a href={href} className="text-orange-600 hover:underline">
+                            {detail}
+                          </a>
+                        ) : (
+                          detail
+                        )}
+                      </p>
+                    )
+                  })}
+
                 </div>
               </motion.div>
             ))}

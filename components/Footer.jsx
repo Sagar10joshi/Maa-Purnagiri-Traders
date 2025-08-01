@@ -36,8 +36,8 @@ export default function Footer() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
             <div className="flex items-center space-x-2 mb-4">
               <motion.div
-                // animate={{ rotate: [0, 360] }}
-                // transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              // animate={{ rotate: [0, 360] }}
+              // transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
               >
                 <Wrench className="w-8 h-8 text-orange-500" />
               </motion.div>
@@ -54,12 +54,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="w-4 h-4 text-orange-500" />
-                <span>9410333186</span>
-                <span>9897264344</span>
+                <a href="tel:9410333186" className="hover:text-orange-400 transition-colors">9410333186</a>
+                <a href="tel:9897264344" className="hover:text-orange-400 transition-colors">9897264344</a>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 text-orange-500" />
-                <span>maapurnagiri1974@gmail.com</span>
+                <a href="mailto:maapurnagiritraders1974@gmail.com" className="hover:text-orange-400 transition-colors">
+                  maapurnagiritraders1974@gmail.com
+                </a>
               </div>
             </div>
           </motion.div>
@@ -110,11 +112,11 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center space-x-2 text-sm">
-                <Phone className="w-4 h-4 text-orange-500" />
-                <span>9410333186</span>
-                <span>9897264344</span>
-              </div>
-            
+              <Phone className="w-4 h-4 text-orange-500" />
+              <a href="tel:9410333186" className="hover:text-orange-400 transition-colors">9410333186</a>
+              <a href="tel:9897264344" className="hover:text-orange-400 transition-colors">9897264344</a>
+            </div>
+
 
             {/* Social Links */}
             <div className="flex space-x-4 mt-6">
@@ -141,7 +143,7 @@ export default function Footer() {
           transition={{ delay: 0.5 }}
         >
           <p className="text-slate-400 text-sm">
-            © {new Date().getFullYear()} Maa Purnagiri Traders . All rights reserved. 
+            © {new Date().getFullYear()} Maa Purnagiri Traders . All rights reserved.
           </p>
         </motion.div>
       </div>

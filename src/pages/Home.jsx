@@ -265,9 +265,9 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-orange-500">{product.price}</span>
-                    <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
+                    {/* <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
                       View Details
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </motion.div>

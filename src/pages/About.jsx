@@ -52,7 +52,7 @@ export default function About() {
           <motion.div variants={itemVariants}>
             <motion.div className="relative" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
               <img
-                src="/placeholder.svg?height=400&width=400"
+                src="/ownerImage.jpg?height=400&width=400"
                 alt="Store Owner"
                 className="rounded-lg shadow-lg w-full h-96 object-cover"
               />
@@ -70,12 +70,12 @@ export default function About() {
               className="text-2xl text-slate-700 italic mb-6 relative"
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              // transition={{ delay: 0.5 }}
             >
               <motion.span
                 className="text-6xl text-orange-500 absolute -top-4 -left-4"
                 animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
                 "
               </motion.span>
@@ -84,7 +84,7 @@ export default function About() {
             </motion.blockquote>
             <motion.div className="flex items-center" variants={itemVariants}>
               <div>
-                <p className="font-semibold text-slate-800 text-lg">Mike Johnson</p>
+                <p className="font-semibold text-slate-800 text-lg">Mathura Dutt Nainwal</p>
                 <p className="text-slate-600">Founder & Owner</p>
               </div>
             </motion.div>
@@ -119,8 +119,8 @@ export default function About() {
               </motion.div>
               <motion.div
                 className="text-3xl font-bold text-slate-800 mb-2"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                // animate={{ scale: [1, 1.1, 1] }}
+                // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
                 {stat.value}
               </motion.div>
@@ -138,8 +138,8 @@ export default function About() {
         >
           <motion.h2
             className="text-3xl md:text-4xl font-bold mb-6"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+            // animate={{ y: [0, -10, 0] }}
+            // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           >
             Our Mission
           </motion.h2>
