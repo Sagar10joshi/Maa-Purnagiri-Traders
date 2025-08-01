@@ -26,7 +26,7 @@ export default function Home() {
   }
 
   const floatingIcons = [
-    { Icon: Wrench  },
+    { Icon: Wrench },
     { Icon: Hammer },
     { Icon: Zap },
   ]
@@ -118,7 +118,7 @@ export default function Home() {
         </div>
 
         {/* Feature Cards */}
-        <motion.div className="grid md:grid-cols-3 gap-8 mt-20" variants={containerVariants}>
+        {/* <motion.div className="grid md:grid-cols-3 gap-8 mt-20" variants={containerVariants}>
           {[
             { title: "Quality Tools", desc: "Professional-grade equipment", icon: "🔧" },
             { title: "Expert Advice", desc: "Get help from our specialists", icon: "👨‍🔧" },
@@ -138,77 +138,9 @@ export default function Home() {
               <p className="text-slate-400">{feature.desc}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
-        {/* Featured Products Section */}
-        {/* <motion.section className="mt-32">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Featured Products</h2>
-            <p className="text-slate-300 text-lg">Discover our most popular tools and equipment</p>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {[
-              {
-                name: "Professional Drill Kit",
-                price: "$89.99",
-                image: "/placeholder.svg?height=200&width=200",
-                badge: "Best Seller",
-              },
-              {
-                name: "LED Work Light Set",
-                price: "$34.99",
-                image: "/placeholder.svg?height=200&width=200",
-                badge: "New Arrival",
-              },
-              {
-                name: "Tool Storage Cabinet",
-                price: "$199.99",
-                image: "/placeholder.svg?height=200&width=200",
-                badge: "Premium",
-              },
-            ].map((product, index) => (
-              <motion.div
-                key={index}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-slate-700 hover:border-orange-500 transition-colors group"
-                variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -10 }}
-              >
-                <div className="relative">
-                  <img
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {product.badge}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-orange-500">{product.price}</span>
-                    <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
-                      View Details
-                    </Button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.section> */}
+        
 
         {/* Services Section */}
         <motion.section className="mt-32">
@@ -271,6 +203,78 @@ export default function Home() {
           </motion.div>
         </motion.section>
 
+
+
+        {/* Featured Products Section */}
+        <motion.section className="mt-32">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">Featured Products</h2>
+            <p className="text-slate-300 text-lg">Discover our most popular tools and equipment</p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {[
+              {
+                name: "Construction Bricks Pack",
+                price: "₹8 - ₹12 / Piece",
+                image: "/Bricks.jpg?height=200&width=200",
+                badge: "Best Seller",
+              },
+              {
+                name: "Steel Rebar Rods (Sariya)",
+                price: "₹ 43,000/Tonne",
+                image: "/Sariya.png?height=200&width=200",
+                badge: "New Arrival",
+              },
+              {
+                name: "Premium Cement Bag",
+                price: "₹300 - ₹350 / bag",
+                image: "/Cement.jpg?height=200&width=200",
+                badge: "Premium",
+              },
+            ].map((product, index) => (
+              <motion.div
+                key={index}
+                className="bg-slate-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-slate-700 hover:border-orange-500 transition-colors group"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -10 }}
+              >
+                <div className="relative">
+                  <img
+                    src={product.image || "/placeholder.svg"}
+                    alt={product.name}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {product.badge}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2">{product.name}</h3>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-orange-500">{product.price}</span>
+                    <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
+                      View Details
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.section>
+
         {/* Why Choose Us Section */}
         <motion.section className="mt-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -304,8 +308,8 @@ export default function Home() {
                   >
                     <div className="bg-orange-600 rounded-full p-2 mt-1">
                       <motion.div
-                        // animate={{ scale: [1, 1.2, 1] }}
-                        // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.3 }}
+                      // animate={{ scale: [1, 1.2, 1] }}
+                      // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.3 }}
                       >
                         ✓
                       </motion.div>
@@ -335,8 +339,8 @@ export default function Home() {
               </div>
               <motion.div
                 className="absolute -top-4 -right-4 bg-slate-800 rounded-full p-4"
-                // animate={{ rotate: 360 }}
-                // transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+              // animate={{ rotate: 360 }}
+              // transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
               >
                 <Wrench className="w-8 h-8 text-orange-500" />
               </motion.div>
@@ -344,7 +348,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        
+
 
         {/* Brand Partners */}
         <motion.section className="mt-32 mb-20">
@@ -364,7 +368,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
           >
-           {["Ambuja Cement", "Bangur Cement", "Kamdhenu Nxt", "Shree Jung Rodhak", "JK Cement", "Jindal TMT bars"].map((brand, index) => (
+            {["Ambuja Cement", "Bangur Cement", "Kamdhenu Nxt", "Shree Jung Rodhak", "JK Cement", "Jindal TMT bars"].map((brand, index) => (
               <motion.div
                 key={index}
                 className="bg-slate-800/30 p-6 rounded-lg border border-slate-700 hover:border-orange-500 transition-colors text-center"
@@ -373,8 +377,8 @@ export default function Home() {
               >
                 <motion.div
                   className="text-2xl font-bold text-white"
-                  // animate={{ opacity: [0.7, 1, 0.7] }}
-                  // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.2 }}
+                // animate={{ opacity: [0.7, 1, 0.7] }}
+                // transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, delay: index * 0.2 }}
                 >
                   {brand}
                 </motion.div>
