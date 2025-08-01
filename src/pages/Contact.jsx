@@ -121,7 +121,7 @@ export default function Contact() {
 
           {/* Contact Information */}
           <motion.div
-            className="space-y-6"
+            className="space-y-6 bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto w-full"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
@@ -175,22 +175,25 @@ export default function Contact() {
 
             {/* Map Placeholder */}
             <motion.div
-              className="bg-white rounded-lg shadow-lg p-6"
+              className="bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
             >
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Find Us</h3>
               <div className="bg-slate-200 rounded-lg h-48 flex items-center justify-center">
-                <motion.div
-                  className="text-slate-500 text-center"
-                  animate={{ opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                >
-                  <MapPin className="w-12 h-12 mx-auto mb-2" />
-                  <p>Interactive Map</p>
-                  <p className="text-sm">123 Hardware Street</p>
-                </motion.div>
+
+
+                <iframe
+                  title="Map"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.407376526174!2d79.51876077552065!3d29.171095475374994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a08563dc90f2ad%3A0x56dc63f9938cb7b1!2sRathour%20Automobile!5e1!3m2!1sen!2sin!4v1752737749204!5m2!1sen!2sin"
+                ></iframe>
               </div>
             </motion.div>
           </motion.div>

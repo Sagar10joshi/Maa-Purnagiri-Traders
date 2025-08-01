@@ -129,7 +129,7 @@ export default function Contact() {
 
           {/* Contact Information */}
           <motion.div
-            className="space-y-6"
+            className="space-y-6 bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto w-full"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
@@ -183,7 +183,7 @@ export default function Contact() {
 
             {/* Map Placeholder */}
             <motion.div
-              className="bg-white rounded-lg shadow-lg p-6"
+              className="bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
