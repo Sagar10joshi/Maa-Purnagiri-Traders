@@ -86,6 +86,8 @@ export default function About() {
               <div>
                 <p className="font-semibold text-slate-800 text-lg">Mathura Dutt Nainwal</p>
                 <p className="text-slate-600">Founder & Owner</p>
+                <p className="font-semibold text-slate-800 text-lg">Kailash Chandra Dalakoti</p>
+                <p className="text-slate-600">Co-Founder & Partner</p>
               </div>
             </motion.div>
           </motion.div>

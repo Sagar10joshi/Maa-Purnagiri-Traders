@@ -51,9 +51,9 @@ export default function Contact() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-50 py-20">
-      <div className="container mx-auto px-4">
-        <motion.div className="text-center mb-16" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
+    <div className="w-2xl min-h-screen bg-gray-50	 py-20 overflow-x-hidden max-w-[110%]">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <motion.div className="text-center mb-16 " initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Get In Touch</h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Have questions about our products or need expert advice? We're here to help!
@@ -63,7 +63,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg ml-[5%] shadow-lg p-6 max-w-[94%]"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
@@ -121,7 +121,7 @@ export default function Contact() {
 
           {/* Contact Information */}
           <motion.div
-            className="space-y-6 bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto w-full"
+            className="space-y-6 p-6 max-w-[95%] sm:max-w-[600px] md:max-w-[800px]"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
@@ -175,7 +175,7 @@ export default function Contact() {
 
             {/* Map Placeholder */}
             <motion.div
-              className="bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto w-full"
+              className="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm md:max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
