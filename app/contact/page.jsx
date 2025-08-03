@@ -38,7 +38,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Visit Our Store",
-      details: ["Teenpani bypass opposite of Tata Motors near City Hospital,Haldwani"],
+      details: ["Teenpani bypass opposite to Tata Motors near City Hospital,Haldwani"],
     },
     {
       icon: Phone,
@@ -53,7 +53,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: "Store Hours",
-      details: ["Mon-Fri: 8AM-8PM", "Sat-Sun: 9AM-6PM"],
+      details: ["Mon-Fri: 8AM-8PM", "Sat: Closed","Sun: 8AM-8PM"],
     },
   ]
 
@@ -200,7 +200,7 @@ export default function Contact() {
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.407376526174!2d79.51876077552065!3d29.171095475374994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a08563dc90f2ad%3A0x56dc63f9938cb7b1!2sRathour%20Automobile!5e1!3m2!1sen!2sin!4v1752737749204!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d206.9495274442375!2d79.51997891405577!3d29.17775697519941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDEwJzQwLjAiTiA3OcKwMzEnMTIuMCJF!5e1!3m2!1sen!2sin!4v1754193894598!5m2!1sen!2sin"
                 ></iframe>
               </div>
             </motion.div>
