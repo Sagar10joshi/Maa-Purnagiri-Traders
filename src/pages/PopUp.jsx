@@ -103,7 +103,7 @@ export default function HardwarePopupModal({ onClose }) {
           </div>
 
           {/* Optional: Small disclaimer or additional info */}
-          <p className="text-xs text-gray-500 pt-2">Free shipping on orders over $50!</p>
+          <p className="text-xs text-gray-500 pt-2">Free shipping on orders over ₹4000!</p>
         </div>
       </div>
     </div>
