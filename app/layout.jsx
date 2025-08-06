@@ -6,7 +6,7 @@ import Footer from "../components/Footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Hardware Haven - Your One-Stop Hardware Solution",
+  title: "Maa Purnagiri Traders",
   description: "Quality tools, expert advice, and exceptional service for all your hardware needs.",
     generator: 'v0.dev'
 }

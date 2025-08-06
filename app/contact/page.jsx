@@ -6,11 +6,15 @@ import { MapPin, Phone, Mail, Clock, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+// import HardwarePopupModal from "./Orderpopup.jsx"
 
 export default function Contact() {
+
+  const [showModal, setShowModal] = useState(true)
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    // email: "",
+    phone: "",
     message: "",
   })
 
@@ -21,7 +25,8 @@ export default function Contact() {
 
     setFormData({
       name: "",
-      email: "",
+      // email: "",
+      phone: "",
       message: ""
     });
 
@@ -53,7 +58,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: "Store Hours",
-      details: ["Mon-Fri: 8AM-8PM", "Sat: Closed","Sun: 8AM-8PM"],
+      details: ["Mon-Sun: 8AM-8PM","Sat: 8AM-1PM",]
     },
   ]
 
@@ -62,9 +67,9 @@ export default function Contact() {
     <div className="w-2xl min-h-screen bg-blue-50 py-20 overflow-x-hidden max-w-[110%]">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center mb-16 " initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Get In Touch</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Get In Touch or Order Online</h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Have questions about our products or need expert advice? We're here to help!
+            Have questions about our products or want to order now? We're here to help!
           </p>
         </motion.div>
 
@@ -76,7 +81,7 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-bold text-slate-800 mb-6">Send us your Order</h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
@@ -93,27 +98,27 @@ export default function Contact() {
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Phone No.</label>
                 <Input
-                  type="email"
-                  name="email"
-                  value={formData.email}
+                  type="number"
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleChange}
                   className="w-full"
-                  placeholder="Enter your email"
+                  placeholder="Enter your phone no."
                   required
                 />
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Write your order here</label>
                 <Textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
                   className="w-full"
-                  placeholder="Tell us how we can help you..."
+                  placeholder="Tell us what you want to order..."
                   required
                 />
               </motion.div>
@@ -121,7 +126,7 @@ export default function Contact() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
                 <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white py-3" size="lg">
                   <Send className="w-5 h-5 mr-2" />
-                  Send Message
+                  Send Order
                 </Button>
               </motion.div>
             </form>
@@ -207,6 +212,8 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
+      {/* Popup Modal */}
+            {/* {showModal && <HardwarePopupModal onClose={() => setShowModal(false)} />} */}
     </div>
   )
 }

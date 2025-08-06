@@ -2,10 +2,13 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Wrench, Hammer, Zap } from "lucide-react"
 import { Button } from "../components/ui/button"
-// import { Link } from "react-router-dom"
+import HardwarePopupModal from "./PopUp.jsx"
+import { useState } from "react"
 import Link from 'next/link'
 
 export default function Home() {
+
+  const [showModal, setShowModal] = useState(true)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -92,9 +95,9 @@ export default function Home() {
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center" variants={itemVariants}>
-            <Link href="/contact" passHref>
+            <Link href="/products" passHref>
               <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg group">
-                Contact Us
+                Shop Now
                 <motion.div
                   className="ml-2"
                   animate={{ x: [0, 5, 0] }}
@@ -225,22 +228,22 @@ export default function Home() {
           >
             {[
               {
-                name: "Construction Bricks Pack",
-                price: "₹8 - ₹12 / Piece",
-                image: "/Bricks.jpg?height=200&width=200",
-                badge: "Best Seller",
-              },
-              {
                 name: "Steel Rebar Rods (Sariya)",
                 price: "₹ 43,000/Tonne",
                 image: "/Sariya.png?height=200&width=200",
-                badge: "New Arrival",
+                badge: "Premium",
               },
               {
                 name: "Premium Cement Bag",
                 price: "₹300 - ₹350 / bag",
                 image: "/Cement.jpg?height=200&width=200",
                 badge: "Premium",
+              },
+              {
+                name: "Paint Buckets",
+                price: "₹800 - ₹950 / bucket",
+                image: "/Paint-Brands.jpg?height=200&width=200",
+                badge: "New Arrival",
               },
             ].map((product, index) => (
               <motion.div
@@ -387,6 +390,8 @@ export default function Home() {
           </motion.div>
         </motion.section>
       </motion.div>
+      {/* Popup Modal */}
+      {showModal && <HardwarePopupModal onClose={() => setShowModal(false)} />}
     </div>
   )
 }

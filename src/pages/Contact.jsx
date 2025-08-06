@@ -46,7 +46,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: "Store Hours",
-      details: ["Mon-Fri: 8AM-8PM", "Sat: Closed","Sun: 8AM-8PM"],
+      details: ["Mon-Sun: 8AM-8PM","Sat: 8AM-1PM",]
     },
   ]
 
