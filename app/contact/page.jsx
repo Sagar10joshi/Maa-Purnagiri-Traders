@@ -67,9 +67,9 @@ export default function Contact() {
     <div className="w-2xl min-h-screen bg-blue-50 py-20 overflow-x-hidden max-w-[110%]">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center mb-16 " initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Get In Touch or Order Online</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Get In Touch</h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Have questions about our products or want to order now? We're here to help!
+            Have questions about our products We're here to help!
           </p>
         </motion.div>
 
@@ -111,14 +111,14 @@ export default function Contact() {
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Write your order here</label>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Write your message here</label>
                 <Textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
                   className="w-full"
-                  placeholder="Tell us what you want to order..."
+                  placeholder="Write your message here..."
                   required
                 />
               </motion.div>
@@ -126,7 +126,7 @@ export default function Contact() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
                 <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700 text-white py-3" size="lg">
                   <Send className="w-5 h-5 mr-2" />
-                  Send Order
+                  Send Message
                 </Button>
               </motion.div>
             </form>
