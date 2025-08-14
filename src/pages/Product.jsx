@@ -32,16 +32,17 @@ const products = [
       id: 3,
       name: "Paint Buckets",
       price: "950",
-      image: "/Paint-Brands.jpg?height=200&width=200",
+      image: "/Paint-Brands.webp?height=200&width=200",
       // description: 'Ultra HD display with HDR support and USB-C connectivity'
   },
-  // {
-  //     id: 4,
-  //     name: 'USB-C Hub',
-  //     price: 49.99,
-  //     image: '/placeholder.svg?height=200&width=200',
-  //     description: '7-in-1 USB-C hub with HDMI, USB 3.0, and SD card slots'
-  // }
+  {
+      id: 4,
+      name: "All sanitary items are available",
+      price: "499",
+      image: "/plumbing.webp?height=200&width=200",
+      // description: 'All construction and plumbing related items available'
+  }
+
 ]
 
 export default function Page() {

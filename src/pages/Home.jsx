@@ -217,7 +217,7 @@ export default function Home() {
             transition={{ delay: 1.2 }}
           >
             <h2 className="text-4xl font-bold text-white mb-4">Featured Products</h2>
-            <p className="text-slate-300 text-lg">Discover our most popular tools and equipment</p>
+            <p className="text-slate-300 text-lg">All building materials are available</p>
           </motion.div>
 
           <motion.div
@@ -229,20 +229,25 @@ export default function Home() {
             {[
               {
                 name: "Steel Rebar Rods (Sariya)",
-                price: "₹ 43,000/Tonne",
+                // price: "₹ 43,000/Tonne",
                 image: "/Sariya.png?height=200&width=200",
                 badge: "Premium",
               },
               {
                 name: "Premium Cement Bag",
-                price: "₹300 - ₹350 / bag",
+                // price: "₹300 - ₹350 / bag",
                 image: "/Cement.jpg?height=200&width=200",
                 badge: "Premium",
               },
               {
-                name: "Paint Buckets",
-                price: "₹800 - ₹950 / bucket",
-                image: "/Paint-Brands.jpg?height=200&width=200",
+                name: "Asian Paints",
+                price: "₹1000 - ₹8000 / bucket (Price may vary as per the product)",
+                image: "/Paint-Brands.webp?height=200&width=200",
+                badge: "New Arrival",
+              },{
+                name: "All sanitary items are available",
+                price: "Price may vary as per the product",
+                image: "/plumbing.webp?height=200&width=200",
                 badge: "New Arrival",
               },
             ].map((product, index) => (

@@ -236,20 +236,25 @@ export default function Home() {
             {[
               {
                 name: "Steel Rebar Rods (Sariya)",
-                price: "₹ 43,000/Tonne",
+                price: "For price contact the owner",
                 image: "/Sariya.png?height=200&width=200",
                 badge: "New Arrival",
               },
               {
                 name: "Premium Cement Bag",
-                price: "₹300 - ₹350 / bag",
+                price: "₹350 - ₹450 / bag",
                 image: "/Cement.jpg?height=200&width=200",
                 badge: "Premium",
               },
               {
-                name: "Paint Buckets",
-                price: "₹800 - ₹950 / bucket",
-                image: "/Paint-Brands.jpg?height=200&width=200",
+                name: "Asian Paints",
+                price: "₹1000 - ₹8000 / bucket (Price may vary as per the product)",
+                image: "/Paint-Brands.webp?height=200&width=200",
+                badge: "New Arrival",
+              },{
+                name: "All sanitary items are available",
+                price: "Price may vary as per the product",
+                image: "/plumbing.webp?height=200&width=200",
                 badge: "New Arrival",
               },
             ].map((product, index) => (
