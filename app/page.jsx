@@ -236,24 +236,24 @@ export default function Home() {
             {[
               {
                 name: "Steel Rebar Rods (Sariya)",
-                price: "For price contact the owner",
+                price: "₹5000-₹7000 per quintal",
                 image: "/Sariya.png?height=200&width=200",
-                badge: "New Arrival",
+                badge: "Premium",
               },
               {
                 name: "Premium Cement Bag",
-                price: "₹350 - ₹450 / bag",
+                price: "₹350-₹500 per bag",
                 image: "/Cement.jpg?height=200&width=200",
                 badge: "Premium",
               },
               {
                 name: "Asian Paints",
-                price: "₹1000 - ₹8000 / bucket (Price may vary as per the product)",
+                price: "₹1200-₹8500 per bucket",
                 image: "/Paint-Brands.webp?height=200&width=200",
                 badge: "New Arrival",
               },{
                 name: "All sanitary items are available",
-                price: "Price may vary as per the product",
+                price: "₹250-₹6000 per piece",
                 image: "/plumbing.webp?height=200&width=200",
                 badge: "New Arrival",
               },

@@ -17,30 +17,30 @@ const products = [
   {
     id: 1,
     name: "Steel Rebar Rods (Sariya)",
-    price: " 43000",
+    price: " 5000",
     image: "/Sariya.png?height=200&width=200",
-    // description: 'High-precision wireless gaming mouse with RGB lighting'
+    description: '[₹5000-₹7000 per quintal] Price may vary as per the product purchased'
   },
   {
     id: 2,
     name: "Premium Cement Bag",
     price: "400",
     image: "/Cement.jpg?height=200&width=200",
-    // description: 'Cherry MX switches with customizable backlighting'
+    description: '[₹350-₹500 per bag] Price may vary as per the product purchased'
   },
   {
       id: 3,
       name: "Paint Buckets",
-      price: "950",
+      price: "1200",
       image: "/Paint-Brands.webp?height=200&width=200",
-      // description: 'Ultra HD display with HDR support and USB-C connectivity'
+      description: '[₹1200-₹8500 per bucket] Price may vary as per the product purchased'
   },
   {
       id: 4,
       name: "All sanitary items are available",
-      price: "499",
+      price: "250",
       image: "/plumbing.webp?height=200&width=200",
-      // description: 'All construction and plumbing related items available'
+      description: '[₹250-₹6000 per piece] Price may vary as per the product purchased'
   }
 
 ]
