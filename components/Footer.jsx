@@ -23,9 +23,9 @@ export default function Footer() {
   // ]
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/share/1791ddfLzM/?mibextid=wwXIfr", label: "Facebook" },
+    // { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "https://www.instagram.com/purnagiri_traders?igsh=ZndzdjVnMDJ4NWJ6", label: "Instagram" },
   ]
 
   return (
