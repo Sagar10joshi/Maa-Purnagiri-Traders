@@ -205,7 +205,7 @@ export default function Contact() {
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d206.9495274442375!2d79.51997891405577!3d29.17775697519941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDEwJzQwLjAiTiA3OcKwMzEnMTIuMCJF!5e1!3m2!1sen!2sin!4v1754193894598!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.0273953400382!2d79.51990529621051!3d29.177702023754406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a085d89f144d11%3A0xd2f8a4d2259be9a9!2sMaa%20Purnagiri%20Traders!5e1!3m2!1sen!2sin!4v1755317367289!5m2!1sen!2sin"
                 ></iframe>
               </div>
             </motion.div>
