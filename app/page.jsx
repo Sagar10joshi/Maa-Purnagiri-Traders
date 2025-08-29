@@ -235,7 +235,7 @@ export default function Home() {
           >
             {[
               {
-                name: "Steel Rebar Rods (Sariya)",
+                name: "TMT BARS (Sariya)",
                 price: "₹5000-₹7000 per quintal",
                 image: "/Sariya.png?height=200&width=200",
                 badge: "Premium",

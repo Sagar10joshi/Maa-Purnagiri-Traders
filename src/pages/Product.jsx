@@ -8,6 +8,7 @@ import HardwarePopupModal from "./Orderpopup.jsx"
 
 
 
+
 const SERVICE_ID = 'service_e9bqfde'
 const TEMPLATE_ID = 'template_33hnlmj'
 const PUBLIC_KEY = 'ZIMfxD9l1JdVolhBO'
@@ -16,7 +17,7 @@ const PUBLIC_KEY = 'ZIMfxD9l1JdVolhBO'
 const products = [
   {
     id: 1,
-    name: "Steel Rebar Rods (Sariya)",
+    name: "TMT BARS (Sariya)",
     price: " 5000",
     image: "/Sariya.png?height=200&width=200",
     description: '[₹5000-₹7000 per quintal] Price may vary as per the product purchased'
@@ -29,20 +30,19 @@ const products = [
     description: '[₹350-₹500 per bag] Price may vary as per the product purchased'
   },
   {
-      id: 3,
-      name: "Paint Buckets",
-      price: "1200",
-      image: "/Paint-Brands.webp?height=200&width=200",
-      description: '[₹1200-₹8500 per bucket] Price may vary as per the product purchased'
+    id: 3,
+    name: "Paint Buckets",
+    price: "1200",
+    image: "/Paint-Brands.webp?height=200&width=200",
+    description: '[₹1200-₹8500 per bucket] Price may vary as per the product purchased'
   },
   {
-      id: 4,
-      name: "All sanitary items are available",
-      price: "250",
-      image: "/plumbing.webp?height=200&width=200",
-      description: '[₹250-₹6000 per piece] Price may vary as per the product purchased'
+    id: 4,
+    name: "All sanitary items are available",
+    price: "250",
+    image: "/plumbing.webp?height=200&width=200",
+    description: '[₹250-₹6000 per piece] Price may vary as per the product purchased'
   }
-
 ]
 
 export default function Page() {
@@ -50,6 +50,41 @@ export default function Page() {
   const [showEmailPrompt, setShowEmailPrompt] = useState(false)
   const [userEmail, setUserEmail] = useState('')
   const [showModal, setShowModal] = useState(false)
+  const [addedProductIds, setAddedProductIds] = useState([]);
+
+
+
+
+  // const sendEmail = () => {
+  //   const items = cart.map(item => `${item.name} x ${item.quantity} = ₹${(item.price * item.quantity).toFixed(2)}`).join('\n')
+
+  //   const templateParams = {
+
+
+  //     user_email: userEmail, // collected from input
+  //     // owner_email: 'maapurnagiritraders1974@gmail.com', // optional: hardcoded
+  //     message: `
+  //       New Order:
+  //       -----------------------
+  //       ${items}
+  //       -----------------------
+  //       Total: ₹${getTotalPrice()}
+  //     `
+  //   }
+
+  //   emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+  //     .then(() => {
+  //       // alert('Order summary sent to the store owner!')
+  //       setShowModal(true)
+  //       setCart([]) // clear cart
+  //       setShowEmailPrompt(false)
+  //     })
+  //     .catch(err => {
+  //       console.error(err)
+  //       alert('Failed to send email.')
+  //     })
+  // }
+
 
 
 
@@ -57,32 +92,61 @@ export default function Page() {
 
 
   const sendEmail = () => {
-    const items = cart.map(item => `${item.name} x ${item.quantity} = ₹${(item.price * item.quantity).toFixed(2)}`).join('\n')
+  const trimmedInput = userEmail.trim();
 
-    const templateParams = {
-      user_email: userEmail, // collected from input
-      // owner_email: 'maapurnagiritraders1974@gmail.com', // optional: hardcoded
-      message: `
-        New Order:
-        -----------------------
-        ${items}
-        -----------------------
-        Total: ₹${getTotalPrice()}
-      `
-    }
-
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-      .then(() => {
-        // alert('Order summary sent to the store owner!')
-        setShowModal(true)
-        setCart([]) // clear cart
-        setShowEmailPrompt(false)
-      })
-      .catch(err => {
-        console.error(err)
-        alert('Failed to send email.')
-      })
+  // Check if the input is empty
+  if (!trimmedInput) {
+    alert("❗ Please enter your mobile number before confirming the order.");
+    return;
   }
+
+  // Check if it's a valid 10-digit mobile number
+  if (!/^\d{10}$/.test(trimmedInput)) {
+    alert("❗ Please enter a valid 10-digit mobile number.");
+    return;
+  }
+
+  const items = cart.map(item =>
+    `${item.name} x ${item.quantity} = ₹${(item.price * item.quantity).toFixed(2)}`
+  ).join('\n');
+
+  const templateParams = {
+    user_email: trimmedInput,
+    message: `
+      New Order:
+      -----------------------
+      ${items}
+      -----------------------
+      Total: ₹${getTotalPrice()}
+    `
+  };
+
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+    .then(() => {
+      setShowModal(true);
+      setCart([]); // clear cart
+      setShowEmailPrompt(false);
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Failed to send email.');
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -107,7 +171,23 @@ export default function Page() {
         return [...prevCart, { ...product, quantity: 1 }]
       }
     })
+
+    // Add the product ID to the temporary "added" state
+    setAddedProductIds(prev => [...prev, product.id]);
+
+    // Remove it after 3 seconds
+    setTimeout(() => {
+      setAddedProductIds(prev => prev.filter(id => id !== product.id));
+    }, 3000);
   }
+
+
+
+
+
+
+
+
 
   const removeFromCart = (productId) => {
     setCart(prevCart => prevCart.filter(item => item.id !== productId))
@@ -139,7 +219,7 @@ export default function Page() {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <h1 className="text-2xl font-bold text-gray-900">Hardware Store</h1>
+          <h1 className="text-2xl font-bold text-green-900">You can order now and discuss the final price later. Thanks for visiting.</h1>
         </div>
       </header>
 
@@ -147,7 +227,13 @@ export default function Page() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Products Column */}
           <div className="lg:col-span-3">
-            <h2 className="text-xl font-semibold text-gray-900 mb-6">Products</h2>
+            {/* <h2 className="text-xl font-semibold text-gray-900 mb-6">Products</h2> */}
+            <div className="flex items-center gap-2 mb-6">
+                <ShoppingCart className="w-5 h-5 text-gray-700" />
+                <h2 className="text-xl font-semibold text-gray-900">
+                  Cart ({getTotalItems()})
+                </h2>
+              </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {products.map(product => (
                 <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -163,11 +249,22 @@ export default function Page() {
                       <span className="text-xl font-bold text-blue-600">₹{product.price}</span>
                       <button
                         onClick={() => addToCart(product)}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition-colors flex items-center gap-2"
+                        disabled={addedProductIds.includes(product.id)}
+                        className={`px-4 py-2 rounded-md font-medium transition-colors flex items-center gap-2 ${addedProductIds.includes(product.id)
+                            ? "bg-green-600 text-white"
+                            : "bg-blue-600 hover:bg-blue-700 text-white"
+                          }`}
                       >
-                        <Plus className="w-4 h-4" />
-                        Add to Cart
+                        {addedProductIds.includes(product.id) ? (
+                          <>✔️ Added</>
+                        ) : (
+                          <>
+                            <Plus className="w-4 h-4" />
+                            Add to Cart
+                          </>
+                        )}
                       </button>
+
                     </div>
                   </div>
                 </div>
@@ -264,10 +361,10 @@ export default function Page() {
                 <div className="mt-4 space-y-2">
                   <input
                     type="number"
-                    required
                     className="w-full border rounded p-2"
                     placeholder="Enter your mobile number"
                     value={userEmail}
+                    required
                     onChange={(e) => setUserEmail(e.target.value)}
                   />
                   <button
