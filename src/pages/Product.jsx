@@ -51,6 +51,9 @@ export default function Page() {
   const [userEmail, setUserEmail] = useState('')
   const [showModal, setShowModal] = useState(false)
   const [addedProductIds, setAddedProductIds] = useState([]);
+  const [isSending, setIsSending] = useState(false);
+  const [isConfirmed, setIsConfirmed] = useState(false);
+
 
 
 
@@ -90,50 +93,58 @@ export default function Page() {
 
 
 
-
   const sendEmail = () => {
-  const trimmedInput = userEmail.trim();
+    const trimmedInput = userEmail.trim();
 
-  // Check if the input is empty
-  if (!trimmedInput) {
-    alert("❗ Please enter your mobile number before confirming the order.");
-    return;
-  }
+    // ✅ Show sending state immediately
+    setIsSending(true);
 
-  // Check if it's a valid 10-digit mobile number
-  if (!/^\d{10}$/.test(trimmedInput)) {
-    alert("❗ Please enter a valid 10-digit mobile number.");
-    return;
-  }
+    if (!trimmedInput) {
+      alert("❗ Please enter your mobile number before confirming the order.");
+      setIsSending(false); // ⛔ Reset if validation fails
+      return;
+    }
 
-  const items = cart.map(item =>
-    `${item.name} x ${item.quantity} = ₹${(item.price * item.quantity).toFixed(2)}`
-  ).join('\n');
+    if (!/^\d{10}$/.test(trimmedInput)) {
+      alert("❗ Please enter a valid 10-digit mobile number.");
+      setIsSending(false); // ⛔ Reset if validation fails
+      return;
+    }
 
-  const templateParams = {
-    user_email: trimmedInput,
-    message: `
+    const items = cart.map(item =>
+      `${item.name} x ${item.quantity} = ₹${(item.price * item.quantity).toFixed(2)}`
+    ).join('\n');
+
+    const templateParams = {
+      user_email: trimmedInput,
+      message: `
       New Order:
       -----------------------
       ${items}
       -----------------------
       Total: ₹${getTotalPrice()}
     `
-  };
+    };
 
-  emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-    .then(() => {
-      setShowModal(true);
-      setCart([]); // clear cart
-      setShowEmailPrompt(false);
-    })
-    .catch(err => {
-      console.error(err);
-      alert('Failed to send email.');
-    });
-}
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then(() => {
+        setIsSending(false);
+        setIsConfirmed(true);
+        setShowModal(true);
+        setCart([]);
+        setShowEmailPrompt(false);
 
-
+        // Optional reset
+        setTimeout(() => {
+          setIsConfirmed(false);
+        }, 5000);
+      })
+      .catch(err => {
+        console.error(err);
+        alert('❌ Failed to send email.');
+        setIsSending(false); // reset on error
+      });
+  }
 
 
 
@@ -229,11 +240,11 @@ export default function Page() {
           <div className="lg:col-span-3">
             {/* <h2 className="text-xl font-semibold text-gray-900 mb-6">Products</h2> */}
             <div className="flex items-center gap-2 mb-6">
-                <ShoppingCart className="w-5 h-5 text-gray-700" />
-                <h2 className="text-xl font-semibold text-gray-900">
-                  Cart ({getTotalItems()})
-                </h2>
-              </div>
+              <ShoppingCart className="w-5 h-5 text-gray-700" />
+              <h2 className="text-xl font-semibold text-gray-900">
+                Cart ({getTotalItems()})
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {products.map(product => (
                 <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -264,6 +275,8 @@ export default function Page() {
                           </>
                         )}
                       </button>
+
+
 
                     </div>
                   </div>
@@ -368,11 +381,24 @@ export default function Page() {
                     onChange={(e) => setUserEmail(e.target.value)}
                   />
                   <button
-                    className="bg-blue-600 text-white px-4 py-2 rounded"
-                    onClick={sendEmail}
-                  >
-                    Confirm and Send
-                  </button>
+                        className={`px-4 py-2 rounded w-full font-medium transition-colors
+    ${isSending
+                            ? "bg-green-500 text-white cursor-wait"
+                            : isConfirmed
+                              ? "bg-green-600 text-white cursor-default"
+                              : "bg-blue-600 hover:bg-blue-700 text-white"
+                          }
+                        `}
+                        disabled={isSending || isConfirmed}
+                        onClick={sendEmail}
+                      >
+                        {isSending
+                          ? "📦 Sending your order..."
+                          : isConfirmed
+                            ? "✅ Confirmed"
+                            : "Confirm and Send"}
+                      </button>
+
                 </div>
               )}
 
